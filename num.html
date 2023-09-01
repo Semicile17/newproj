@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>n-Digit Narcissistic number</title>
+</head>
+<body>
+    <input id="inp" type="text" placeholder="enter a number">
+    <button id="check" onclick="Check()">Check</button>
+    <div id="disp"></div>
+    <script>
+      function Check(){
+        check=document.getElementById('check')
+        inp=document.getElementById('inp').value;
+        disp=document.getElementById('disp');
+       
+       num= parseInt(inp);
+        s=0;
+        p=num;
+        while(num>0){
+            rem=num%10;
+            s=s+Math.pow(rem,3);
+            console.log(s);
+            num=num/10;
+        }
+        console.log(s);
+        if(s==p){
+            disp.innerHTML="Armstrong Number";
+        }
+        else{
+            disp.innerHTML="Not a Armstrong Number";  
+        }
+        check.style.display='none';
+        
+      }
+    </script>
+</body>
+</html>
